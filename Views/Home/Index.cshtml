@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="container w-25 mt-3">
+        <form asp-action="Login" class="d-flex flex-column gap-4">
+            <label for="Name" class="fs-4">Please enter your name:</label>
+            <input type="text" name="Name" class="text-center">
+            <div>
+                <input type="submit" value="Submit" class="btn btn-outline-dark w-25">
+            </div>
+        </form>
+    </div>
+</div>

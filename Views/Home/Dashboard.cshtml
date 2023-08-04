@@ -1,0 +1,82 @@
+<div class="container d-flex justify-content-between align-items-center my-4">
+    <div>
+        <h1>Welcome @Context.Session.GetString("Name")!</h1>
+    </div>
+    <div>
+        <a href="Logout">
+            <button class="btn btn-danger border border-dark border-1">Log out</button>
+        </a>
+    </div>
+</div>
+<hr>
+
+<h2 class="text-center my-3">Using Buttons and Anchor Tags</h2>
+
+<div class="container w-50 text-center border border-1">
+    <div>
+        <h2 class="my-3">@Context.Session.GetInt32("Counter")</h2>
+    </div>
+    <div>
+        <div class="d-flex justify-content-center gap-4">
+            <a href="/CounterFunction/+1">
+                <button class="btn btn-warning border border-dark border-1" style="width:10rem; height:5rem">+ 1</button>
+            </a>
+            <a href="/CounterFunction/-1">
+                <button class="btn btn-primary border border-dark border-1" style="width:10rem; height:5rem">- 1</button>
+            </a>
+        </div>
+        <div class="d-flex justify-content-center gap-4 my-4">
+            <a href="/CounterFunction/x2">
+                <button class="btn btn-danger border border-dark border-1" style="width:10rem; height:5rem">x 2</button>
+            </a>
+            <a href="/CounterFunction/rand">
+                <button class="btn btn-success text-dark border border-dark border-1" style="width:10rem; height:5rem">+ Random</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+@* FORM STYLE *@
+
+<h2 class="text-center my-3">Using Forms and Buttons</h2>
+
+<div class="container w-50 text-center border border-1">
+    <div>
+        @if(Context.Session.GetInt32("FormCounter") > 9000)
+        {
+            <h2 class="my-3">OVER 9000!!!</h2>
+        } else
+        {
+            <h2 class="my-3">@Context.Session.GetInt32("FormCounter")</h2>
+        }
+    </div>
+    <div>
+        <div class="d-flex justify-content-center gap-4">
+            <form asp-action="PlusOne">
+                <button class="btn btn-warning border border-dark border-1" style="width:10rem; height:5rem">+ 1</button>
+            </form>
+            <form asp-action="MinusOne">
+                <button class="btn btn-primary border border-dark border-1" style="width:10rem; height:5rem">- 1</button>
+            </form>
+            <form asp-action="TimesTwo">
+                <button class="btn btn-danger border border-dark border-1" style="width:10rem; height:5rem">x 2</button>
+            </form>
+        </div>
+        <div class="d-flex justify-content-center gap-4 my-4">
+            <form asp-action="DivideTwo">
+                <button class="btn btn-success text-dark border border-dark border-1" style="width:10rem; height:5rem">/ 2</button>
+            </form>
+            <form asp-action="PlusRandom">
+                <button class="btn btn-info border border-dark border-1" style="width:10rem; height:5rem">+ Random</button>
+            </form>
+            <form asp-action="MinusRandom">
+                <button class="btn btn-secondary text-light border border-dark border-1" style="width:10rem; height:5rem">- Random</button>
+            </form>
+        </div>
+        <div class="d-flex justify-content-center gap-4 my-4">
+            <form asp-action="Reset">
+                <button class="btn btn-dark border border-dark border-1" style="width:10rem; height:5rem">Reset</button>
+            </form>
+        </div>
+    </div>
+</div>
