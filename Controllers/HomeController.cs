@@ -37,6 +37,7 @@ public class HomeController : Controller
         }
         return View();
         
+        
     }
 
     //passing in a parameter from dashboard (+1, -1, x2, rand)
